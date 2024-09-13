@@ -5,12 +5,13 @@ import { getAllPosts } from "@/lib/posts";
 
 const getPosts = () => {
   const posts = getAllPosts();
-  return posts.map((post) => ({
-    slug: post.slug,
-    title: post.title,
-    date: post.date,
-  }))
-  .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+  return posts
+    .map((post) => ({
+      slug: post.slug,
+      title: post.title,
+      date: post.date,
+    }))
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
 };
 
 const Posts: React.FC = () => {
