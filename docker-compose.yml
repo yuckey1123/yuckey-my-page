@@ -1,0 +1,14 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 3000:3000
+    restart: always
+    tty: true
+    volumes:
+      - ./app:/app
+    environment:
+      - WATCHPACK_POLLING=true
+    command: sh -c "npm run dev"
