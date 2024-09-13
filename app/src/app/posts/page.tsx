@@ -21,7 +21,7 @@ const Posts: React.FC = () => {
       <h1 className="text-2xl font-bold">Posts</h1>
       <div className="grid grid-cols-3">
         {posts.map((post) => (
-          <div className="p-4">
+          <div className="p-4" key={post.slug}>
             <h2 className="text-lg font-bold">
               <Link href={`/posts/${post.slug}`}>{post.title}</Link>
             </h2>

@@ -13,25 +13,31 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { unified } from "unified";
 
-export interface PostProps {
+interface PostProps {
   slug: string;
   title: string;
+  tags: string[];
+  date: string;
   content: string;
-  thumbnail?: string | null;
+  thumbnail: string | null;
   html: string;
-  tags: string;
+}
+
+interface MatterData {
+  title: string;
+  tags: string[];
   date: string;
 }
 
 /**
- * postを全て取得する
+ * すべてのpostを取得する
+ * @return PostProps[]
  */
 export const getAllPosts = (): PostProps[] => {
-  const fileNames = fs.readdirSync(path.join(process.cwd(), "public/posts"));
+  const postsDirectory = path.join(process.cwd(), "public/posts");
+  const slugs = fs.readdirSync(postsDirectory);
 
-  return fileNames.map((fileName) => {
-    return getPost(fileName);
-  });
+  return slugs.map((slug) => getPost(slug));
 };
 
 /**
@@ -59,11 +65,13 @@ export const getPost = (slug: string): PostProps => {
 
   const html = remarkHtml.processSync(matterResult.content).toString();
 
+  const data = matterResult.data as MatterData;
+
   return {
     slug,
-    title: matterResult.data.title,
-    tags: matterResult.data.tags,
-    date: matterResult.data.date,
+    title: data.title,
+    tags: data.tags,
+    date: data.date,
     content: matterResult.content,
     thumbnail: null,
     html,

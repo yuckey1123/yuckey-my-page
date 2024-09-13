@@ -8,7 +8,7 @@ const PostsLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 };
 
 // 動的なメタデータを生成する
-export const generateMetadata = async ({
+export const generateMetadata = ({
   params,
 }: {
   params: {

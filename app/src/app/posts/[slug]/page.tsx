@@ -9,7 +9,7 @@ interface PostsProps {
   };
 }
 
-const Posts: React.FC<PostsProps> = async ({ params }) => {
+const Posts: React.FC<PostsProps> = ({ params }) => {
   const post = getPost(params.slug);
 
   return (
@@ -24,7 +24,7 @@ const Posts: React.FC<PostsProps> = async ({ params }) => {
   );
 };
 
-export const generateStaticParams = async () => {
+export const generateStaticParams = () => {
   const posts = getAllPosts();
   return posts.map((post) => ({
     slug: post.slug,
