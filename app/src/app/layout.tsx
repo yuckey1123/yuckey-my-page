@@ -2,9 +2,7 @@ import "./globals.css";
 import { Metadata } from "next";
 import React from "react";
 
-import Footer from "./components/layouts/Footer";
-import Header from "./components/layouts/Header";
-import Main from "./components/layouts/Main";
+import { Main, Header, Footer } from "./components/layouts";
 
 const RootLayout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
