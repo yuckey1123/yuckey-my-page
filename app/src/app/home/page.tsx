@@ -1,6 +1,6 @@
 "use client";
-import React, { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import React, { useEffect } from "react";
 
 const Home: React.FC = () => {
   const router = useRouter();
