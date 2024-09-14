@@ -2,20 +2,22 @@ import Link from "next/link";
 import React from "react";
 
 const Header: React.FC = () => {
+  const navItems = [
+    { href: "/", label: "Top" },
+    { href: "/home", label: "Home" },
+    { href: "/profile", label: "Profile" },
+    { href: "/posts", label: "Posts" },
+  ];
+
   return (
-    <header className="flex justify-center bg-slate-50 p-6">
-      <li>
-        <Link href="/">Top</Link>
-      </li>
-      <li>
-        <Link href="/home">Home</Link>
-      </li>
-      <li>
-        <Link href="/profile">Profile</Link>
-      </li>
-      <li>
-        <Link href="/posts">Post</Link>
-      </li>
+    <header className="bg-slate-50 p-6">
+      <ul className="flex justify-center space-x-6">
+        {navItems.map((item) => (
+          <li key={item.href}>
+            <Link href={item.href}>{item.label}</Link>
+          </li>
+        ))}
+      </ul>
     </header>
   );
 };
