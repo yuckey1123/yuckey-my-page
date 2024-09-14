@@ -6,8 +6,10 @@ const Home: React.FC = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push("/");
-  }, []);
+    if (typeof window !== "undefined") {
+      router.push("/");
+    }
+  }, [router]);
 
   return (
     <div className="home">
