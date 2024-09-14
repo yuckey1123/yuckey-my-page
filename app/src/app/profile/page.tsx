@@ -5,7 +5,7 @@ const Profile: React.FC = () => {
   return (
     <div className="profile">
       <h1>Profile</h1>
-      <div>フロントエンドの勉強中です！</div>
+      <div>勉強中です！</div>
     </div>
   );
 };
