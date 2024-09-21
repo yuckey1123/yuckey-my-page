@@ -3,7 +3,6 @@ import React from "react";
 
 const Header: React.FC = () => {
   const navItems = [
-    { href: "/", label: "Top" },
     { href: "/home", label: "Home" },
     { href: "/profile", label: "Profile" },
     { href: "/posts", label: "Posts" },
