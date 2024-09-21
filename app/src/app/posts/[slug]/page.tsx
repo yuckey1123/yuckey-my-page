@@ -13,7 +13,7 @@ const Posts: React.FC<PostsProps> = ({ params }) => {
   const post = getPost(params.slug);
 
   return (
-    <div className="prose max-w-none">
+    <div className="prose max-w-none bg-white">
       <Link href="/posts">Back</Link>
 
       <h1 className="text-2xl font-bold">{post.title}</h1>

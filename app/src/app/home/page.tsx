@@ -12,7 +12,7 @@ const Home: React.FC = () => {
   }, [router]);
 
   return (
-    <div className="home">
+    <div className="home bg-white">
       <h1>Home</h1>
     </div>
   );

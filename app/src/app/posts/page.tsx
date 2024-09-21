@@ -17,7 +17,7 @@ const getPosts = () => {
 const Posts: React.FC = () => {
   const posts = getPosts();
   return (
-    <div className="my-8">
+    <div className="my-8 bg-white">
       <h1 className="text-2xl font-bold">Posts</h1>
       <div className="grid grid-cols-3">
         {posts.map((post) => (
